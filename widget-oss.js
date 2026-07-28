@@ -57,8 +57,8 @@
     window.PROVOU_LEVOU_API_KEY = apiKey;
 
     const WEBHOOK_PROVA = 'https://n8n.segredosdodrop.com/webhook/gerador-oculos';
-    const WEBHOOK_PIX = 'https://n8n.segredosdodrop.com/webhook/oss-pix';
-    const WEBHOOK_PIX_STATUS = 'https://n8n.segredosdodrop.com/webhook/oss-pix-status';
+    const WEBHOOK_PIX = 'https://n8n.segredosdodrop.com/webhook/cacife-pix';
+    const WEBHOOK_PIX_STATUS = 'https://n8n.segredosdodrop.com/webhook/cacife-pix-status';
     const WEBHOOK_CHECK_LIMIT = 'https://n8n.segredosdodrop.com/webhook/oss-check-limit';
     const SIZES_TOP = ['XXP', 'XP', 'P', 'M', 'G', 'XG', 'XXG', '3XG', '4XG', '5XG'];
     const SIZES_BOTTOM = ['36/XXP', '38/XP', '40/P', '42/M', '44/G', '46/XG', '48/XXG', '50/3XG', '52/4XG', '54/5XG'];
@@ -1643,14 +1643,6 @@
         }
 
         async function createPixAndPoll() {
-            /* PIX_DESATIVADO: prova extra via PIX removida - mostra so mensagem de volte amanha. */
-            try {
-                var _ph = document.getElementById('q-step-photo'); if (_ph) _ph.style.display = 'none';
-                var _lb = document.getElementById('q-loading-box'); if (_lb) _lb.style.display = 'none';
-                var _pix = document.getElementById('q-step-pix');
-                if (_pix) { _pix.style.display = 'block'; _pix.innerHTML = '<h2>Limite de hoje atingido</h2><p class="q-pix-subtitle" style="text-align:center;">Voc&ecirc; j&aacute; usou suas provas de hoje.<br>Volte amanh&atilde; para experimentar mais &oacute;culos! &#128522;</p>'; }
-            } catch (e) {}
-            return;
             showPixScreen();
             const phone = '55' + phoneInput.value.replace(/\D/g, '');
             try {
