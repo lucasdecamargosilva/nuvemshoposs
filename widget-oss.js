@@ -189,13 +189,13 @@
         .q-btn-inline-provador {
             display: flex; align-items: center; justify-content: center; gap: 8px;
             width: 100%; padding: 16px 20px;
-            background: #111111; color: #fff;
-            border: none; border-radius: 999px;
+            background: #ffffff; color: #111111;
+            border: 1.5px solid #111111; border-radius: 999px;
             font-family: 'Work Sans', var(--font-body), sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
-            cursor: pointer; transition: opacity 0.2s;
+            cursor: pointer; transition: background 0.2s, color 0.2s;
             margin-bottom: 10px; box-sizing: border-box;
         }
-        .q-btn-inline-provador:hover { opacity: 0.85; background: #111111; color: #fff; }
+        .q-btn-inline-provador:hover { background: #111111; color: #fff; }
         .q-btn-inline-provador svg { width: 16px; height: 16px; flex-shrink: 0; }
 
         /* ── Modal overlay ── */
