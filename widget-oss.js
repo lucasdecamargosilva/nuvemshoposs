@@ -187,16 +187,16 @@
 
         /* ── Inline button ── */
         .q-btn-inline-provador {
-            display: flex; align-items: center; justify-content: center; gap: 7px;
-            width: 100%; padding: 13px 16px;
-            background: transparent; color: var(--c-ink);
-            border: 1.5px solid var(--c-ink); border-radius: 0;
-            font-family: 'Work Sans', var(--font-body), sans-serif; font-size: 10px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
-            cursor: pointer; transition: background 0.25s, color 0.25s;
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            width: 100%; padding: 16px 20px;
+            background: #111111; color: #fff;
+            border: none; border-radius: 999px;
+            font-family: 'Work Sans', var(--font-body), sans-serif; font-size: 13px; font-weight: 700; letter-spacing: 0.5px; text-transform: uppercase;
+            cursor: pointer; transition: opacity 0.2s;
             margin-bottom: 10px; box-sizing: border-box;
         }
-        .q-btn-inline-provador:hover { background: var(--c-ink); color: #fff; }
-        .q-btn-inline-provador svg { width: 14px; height: 14px; flex-shrink: 0; }
+        .q-btn-inline-provador:hover { opacity: 0.85; background: #111111; color: #fff; }
+        .q-btn-inline-provador svg { width: 16px; height: 16px; flex-shrink: 0; }
 
         /* ── Modal overlay ── */
         @keyframes q-modal-in { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:translateY(0)} }
