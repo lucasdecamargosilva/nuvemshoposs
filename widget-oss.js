@@ -1,4 +1,21 @@
 (function () {
+    function normalizeStoreText(value) {
+        return String(value || '')
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+            .toLowerCase()
+            .trim();
+    }
+
+    function isAccessoryProduct() {
+        var crumbs = document.querySelectorAll('.breadcrumbs .crumb, [data-store="page-title"] .crumb, nav[aria-label*="breadcrumb" i] a');
+        for (var i = 0; i < crumbs.length; i++) {
+            var label = normalizeStoreText((crumbs[i].getAttribute('title') || '') + ' ' + (crumbs[i].textContent || ''));
+            if (/\bacessorios\b/.test(label)) return true;
+        }
+        return false;
+    }
+
     function isValidBRPhone(nums) {
         function setErr(msg) {
             var el = document.getElementById('q-phone-error');
@@ -2066,7 +2083,7 @@ const fd = new FormData();
             || !!document.querySelector('[data-store^="product-name-"]')
             || !!document.querySelector('meta[property="og:type"][content*="product"]')
             || window.location.pathname.includes('preview.html');
-        if (isProductPage) init();
+        if (isProductPage && !isAccessoryProduct()) init();
     }
     if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', checkAndInit);
     else checkAndInit();
