@@ -4015,6 +4015,21 @@ const fd = new FormData();
                         }
                     } catch (_plE) {}
                     // ─────────────────────────────────────────────────────────────────────────────
+                    // ── Referência fixa por produto (30/10/2026, Oss): nas fotos do modelo usando o óculos no sol,
+                    // a lente preta reflete dourado/laranja e a IA copiava o reflexo. Aqui vão só os packshots em fundo branco.
+                    try {
+                        var _plRefFixa = {
+                            'oculos-arco-e-flecha-all-black': [
+                            'https://acdn-us.mitiendanube.com/stores/007/284/240/products/arco-e-flecha-all-black-8f8ffa03cd01b60ee217841346748975-1024-1024.webp',
+                            'https://acdn-us.mitiendanube.com/stores/007/284/240/products/arco-e-flecha-all-black-4-5c8f90c263aa5a49d417840642074031-1024-1024.webp',
+                            'https://acdn-us.mitiendanube.com/stores/007/284/240/products/arco-e-flecha-all-black-5-650232e4f764bc300517840642073604-1024-1024.webp',
+                            'https://acdn-us.mitiendanube.com/stores/007/284/240/products/arco-e-flecha-all-black-3-5eefd414d2f4c3d6fb17840642078480-1024-1024.webp',
+                            'https://acdn-us.mitiendanube.com/stores/007/284/240/products/arco-e-flecha-all-black-2-bf4ab3da7a3cc757b517840642074092-1024-1024.webp'
+                            ]
+                        };
+                        var _plSlug = (location.pathname.match(/\/produtos\/([^\/?#]+)/) || [])[1] || '';
+                        if (_plRefFixa[_plSlug]) { allProdImgs = _plRefFixa[_plSlug].slice(0, 4); console.log('[PL] referência fixa do produto:', allProdImgs.length); }
+                    } catch (_plRF) {}
                     let _primaryDone = false, _slot = 1;
 
                     for (let _pi = 0; _pi < allProdImgs.length; _pi++) {
